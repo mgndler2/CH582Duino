@@ -3,7 +3,7 @@
         {
             "name": "CH582Duino",
             "maintainer": "mgndler2",
-            "websiteURL": "https://github.com/mgndler2/CH582Duino-Cpp",
+            "websiteURL": "https://github.com/mgndler2/CH582Duino",
             "email": "",
             "help": {
                 "online": ""
@@ -14,7 +14,7 @@
                     "architecture": "wch",
                     "version": "0.1.2",
                     "category": "Contributed",
-                    "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/platform.tar.gz",
+                    "url": "https://github.com/mgndler2/CH582Duino/releases/download/CH582/platform.tar.gz",
                     "archiveFileName": "platform.tar.gz",
                     "checksum": "SHA-256:41a434684c3fcd84baeb4b1f5f1e899a802c46786ade753ee48cd27415ee6036",
                     "size": "984000",
@@ -49,7 +49,7 @@
                     "architecture": "wch",
                     "version": "0.1.3",
                     "category": "Contributed",
-                    "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/0.1.3/platform.tar.gz",
+                    "url": "https://github.com/mgndler2/CH582Duino/releases/download/0.1.3/platform.tar.gz",
                     "archiveFileName": "platform.tar.gz",
                     "checksum": "SHA-256:692173bbe53010e9e1767ae4d6977b45d8c5e703eff0ad867f7091c6f3b8dcdc",
                     "size": "983000",
@@ -155,28 +155,28 @@
                     "systems": [
                         {
                             "host": "x86_64-pc-linux-gnu",
-                            "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/IAP-linux-x64.tar.gz",
+                            "url": "https://github.com/mgndler2/CH582Duino/releases/download/CH582/IAP-linux-x64.tar.gz",
                             "archiveFileName": "IAP-linux-x64.tar.gz",
                             "checksum": "SHA-256:85ff4ef66b080948a9033bc6f61e2be6430ab8c2db1eb63bf9ee8e88fad5658f",
                             "size": "30600000"
                         },
                         {
                             "host": "aarch64-apple-darwin",
-                            "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/IAP-osx-arm64.tar.gz",
+                            "url": "https://github.com/mgndler2/CH582Duino/releases/download/CH582/IAP-osx-arm64.tar.gz",
                             "archiveFileName": "IAP-osx-arm64.tar.gz",
                             "checksum": "SHA-256:b3b57a85d1a0199d05c55d0254aebdef9938164ce3ce89a0f65286d736cb6b19",
                             "size": "28600000"
                         },
                         {
                             "host": "x86_64-apple-darwin",
-                            "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/IAP-osx-x64.tar.gz",
+                            "url": "https://github.com/mgndler2/CH582Duino/releases/download/CH582/IAP-osx-x64.tar.gz",
                             "archiveFileName": "IAP-osx-x64.tar.gz",
                             "checksum": "SHA-256:23a1a86464cb2ec1192ffe84e6d631ae2ebb32a594853356c4466461de2a918d",
                             "size": "37200000"
                         },
                         {
                             "host": "i686-mingw32",
-                            "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/IAP-win-x64.tar.gz",
+                            "url": "https://github.com/mgndler2/CH582Duino/releases/download/CH582/IAP-win-x64.tar.gz",
                             "archiveFileName": "IAP-win-x64.tar.gz",
                             "checksum": "SHA-256:7fac26a8a7e0ed3c6b0bd2afe5756643b47e08feaa52853ffaeaf1ac3b358def",
                             "size": "31300000"

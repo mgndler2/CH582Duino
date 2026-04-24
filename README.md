@@ -1,10 +1,10 @@
-主要架構修改自 ElectronicCats/arduino-wch58x : https://github.com/ElectronicCats/arduino-wch58x#arduino-wch58x<br>
+WCH CH582 Adruino Core with USB CDC
 
-編譯工具遷移至 riscv-none-elf-gcc-xpack : https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack<br>
+主要架構修改自 ElectronicCats/arduino-wch58x : https://github.com/ElectronicCats/arduino-wch58x#arduino-wch58x <br>
 
-ISP工具使用 wchisp: https://github.com/ch32-rs/wchisp<br>
+編譯工具遷移至 riscv-none-elf-gcc-xpack : https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack <br>
 
-
+ISP工具使用 wchisp: https://github.com/ch32-rs/wchisp <br>
 
 
 
@@ -32,7 +32,7 @@ windows 上開發:<br>
 
 ## Board Manager
 
-https://mgndler2.github.io/CH582Duino-Cpp/package_CH582Duino_index.json<br>
+https://mgndler2.github.io/CH582Duino/package_CH582Duino_index.json<br>
 
 <br>
 
