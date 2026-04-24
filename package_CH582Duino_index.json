@@ -1,0 +1,189 @@
+{
+    "packages": [
+        {
+            "name": "CH582Duino",
+            "maintainer": "mgndler2",
+            "websiteURL": "https://github.com/mgndler2/CH582Duino-Cpp",
+            "email": "",
+            "help": {
+                "online": ""
+            },
+            "platforms": [
+                {
+                    "name": "CH582",
+                    "architecture": "wch",
+                    "version": "0.1.2",
+                    "category": "Contributed",
+                    "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/platform.tar.gz",
+                    "archiveFileName": "platform.tar.gz",
+                    "checksum": "SHA-256:41a434684c3fcd84baeb4b1f5f1e899a802c46786ade753ee48cd27415ee6036",
+                    "size": "984000",
+                    "boards": [
+                        {
+                            "name": "CH582"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "CH582Duino",
+                            "name": "riscv-none-elf-gcc",
+                            "version": "14.3.0-1-xPack"
+                        },
+                        {
+                            "packager": "CH582Duino",
+                            "name": "WCHISP",
+                            "version": "0.3.0"
+                        },
+                        {
+                            "packager": "CH582Duino",
+                            "name": "IAPTool",
+                            "version": "1.0.0"
+                        }
+                    ],
+                    "help": {
+                        "online": ""
+                    }
+                },
+                {
+                    "name": "CH582",
+                    "architecture": "wch",
+                    "version": "0.1.3",
+                    "category": "Contributed",
+                    "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/0.1.3/platform.tar.gz",
+                    "archiveFileName": "platform.tar.gz",
+                    "checksum": "SHA-256:692173bbe53010e9e1767ae4d6977b45d8c5e703eff0ad867f7091c6f3b8dcdc",
+                    "size": "983000",
+                    "boards": [
+                        {
+                            "name": "CH582"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "CH582Duino",
+                            "name": "riscv-none-elf-gcc",
+                            "version": "14.3.0-1-xPack"
+                        },
+                        {
+                            "packager": "CH582Duino",
+                            "name": "WCHISP",
+                            "version": "0.3.0"
+                        },
+                        {
+                            "packager": "CH582Duino",
+                            "name": "IAPTool",
+                            "version": "1.0.0"
+                        }
+                    ],
+                    "help": {
+                        "online": ""
+                    }
+                }
+            ],
+            "tools": [
+                {
+                    "name": "riscv-none-elf-gcc",
+                    "version": "14.3.0-1-xPack",
+                    "systems": [
+                        {
+                            "host": "x86_64-pc-linux-gnu",
+                            "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v14.3.0-1/xpack-riscv-none-elf-gcc-14.3.0-1-linux-x64.tar.gz",
+                            "archiveFileName": "xpack-riscv-none-elf-gcc-14.3.0-1-linux-x64.tar.gz",
+                            "checksum": "SHA-256:be1768ef22789f4d9c41384e0261996f51724b84c2efa940d975dd7d9938c726",
+                            "size": "395000000"
+                        },
+                        {
+                            "host": "aarch64-apple-darwin",
+                            "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v14.3.0-1/xpack-riscv-none-elf-gcc-14.3.0-1-darwin-arm64.tar.gz",
+                            "archiveFileName": "xpack-riscv-none-elf-gcc-14.3.0-1-darwin-arm64.tar.gz",
+                            "checksum": "SHA-256:1cb71ea516a0b1042b8f7b584da2d4aee97d425f6b74ad96c37e791142a4784c",
+                            "size": "367000000"
+                        },
+                        {
+                            "host": "x86_64-apple-darwin",
+                            "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v14.3.0-1/xpack-riscv-none-elf-gcc-14.3.0-1-darwin-x64.tar.gz",
+                            "archiveFileName": "xpack-riscv-none-elf-gcc-14.3.0-1-darwin-x64.tar.gz",
+                            "checksum": "SHA-256:0ebd4116c85a72b0e6c49a9e991f396f271269118af45b415286473482795e8a",
+                            "size": "371000000"
+                        },
+                        {
+                            "host": "i686-mingw32",
+                            "url": "https://github.com/xpack-dev-tools/riscv-none-elf-gcc-xpack/releases/download/v14.3.0-1/xpack-riscv-none-elf-gcc-14.3.0-1-win32-x64.zip",
+                            "archiveFileName": "xpack-riscv-none-elf-gcc-14.3.0-1-win32-x64.zip",
+                            "checksum": "SHA-256:44749ebaac273114f6689360d6e1a10b7e0debe9cee7cbc24e83ef84b0c21cc5",
+                            "size": "418000000"
+                        }
+                    ]
+                },
+                {
+                    "name": "WCHISP",
+                    "version": "0.3.0",
+                    "systems": [
+                        {
+                            "host": "x86_64-pc-linux-gnu",
+                            "url": "https://github.com/ch32-rs/wchisp/releases/download/v0.3.0/wchisp-v0.3.0-linux-x64.tar.gz",
+                            "archiveFileName": "wchisp-v0.3.0-linux-x64.tar.gz",
+                            "checksum": "SHA-256:67e3d4eb0ffd3cc610d8927e3c3f452e2110531a3f14405dcaef87df219f200d",
+                            "size": "863000"
+                        },
+                        {
+                            "host": "aarch64-apple-darwin",
+                            "url": "https://github.com/ch32-rs/wchisp/releases/download/v0.3.0/wchisp-v0.3.0-macos-arm64.tar.gz",
+                            "archiveFileName": "wchisp-v0.3.0-macos-arm64.tar.gz",
+                            "checksum": "SHA-256:a17dd422f7697bfe35c7c837c16bf99a7193300bcdc276c1253332b3a023e936",
+                            "size": "786000"
+                        },
+                        {
+                            "host": "x86_64-apple-darwin",
+                            "url": "https://github.com/ch32-rs/wchisp/releases/download/v0.3.0/wchisp-v0.3.0-macos-x64.tar.gz",
+                            "archiveFileName": "wchisp-v0.3.0-macos-x64.tar.gz",
+                            "checksum": "SHA-256:ebbf46b0c64bb356cd58da2683c8809c50bdfe2181969f544933d24c8846f608",
+                            "size": "811000"
+                        },
+                        {
+                            "host": "i686-mingw32",
+                            "url": "https://github.com/ch32-rs/wchisp/releases/download/v0.3.0/wchisp-v0.3.0-win-x64.zip",
+                            "archiveFileName": "wchisp-v0.3.0-win-x64.zip",
+                            "checksum": "SHA-256:eba605bbc62f217f6454e7236d04ef1b8a6b4396dd7ce8dc26fc83016213c3aa",
+                            "size": "666000"
+                        }
+                    ]
+                },
+                {
+                    "name": "IAPTool",
+                    "version": "1.0.0",
+                    "systems": [
+                        {
+                            "host": "x86_64-pc-linux-gnu",
+                            "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/IAP-linux-x64.tar.gz",
+                            "archiveFileName": "IAP-linux-x64.tar.gz",
+                            "checksum": "SHA-256:85ff4ef66b080948a9033bc6f61e2be6430ab8c2db1eb63bf9ee8e88fad5658f",
+                            "size": "30600000"
+                        },
+                        {
+                            "host": "aarch64-apple-darwin",
+                            "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/IAP-osx-arm64.tar.gz",
+                            "archiveFileName": "IAP-osx-arm64.tar.gz",
+                            "checksum": "SHA-256:b3b57a85d1a0199d05c55d0254aebdef9938164ce3ce89a0f65286d736cb6b19",
+                            "size": "28600000"
+                        },
+                        {
+                            "host": "x86_64-apple-darwin",
+                            "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/IAP-osx-x64.tar.gz",
+                            "archiveFileName": "IAP-osx-x64.tar.gz",
+                            "checksum": "SHA-256:23a1a86464cb2ec1192ffe84e6d631ae2ebb32a594853356c4466461de2a918d",
+                            "size": "37200000"
+                        },
+                        {
+                            "host": "i686-mingw32",
+                            "url": "https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/IAP-win-x64.tar.gz",
+                            "archiveFileName": "IAP-win-x64.tar.gz",
+                            "checksum": "SHA-256:7fac26a8a7e0ed3c6b0bd2afe5756643b47e08feaa52853ffaeaf1ac3b358def",
+                            "size": "31300000"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

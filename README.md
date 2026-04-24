@@ -32,7 +32,7 @@ windows 上開發:<br>
 
 ## Board Manager
 
-https://github.com/mgndler2/CH582Duino-Cpp/releases/download/CH582/package\_CH582Duino\_index.json<br>
+https://mgndler2.github.io/CH582Duino-Cpp/package_CH582Duino_index.json<br>
 
 <br>
 
