@@ -99,7 +99,7 @@ recipe.objcopy.hex.pattern="{compiler.path}{compiler.elf2hex.cmd}" {compiler.elf
 
 ## Compute size
 recipe.size.pattern="{compiler.path}{compiler.size.cmd}" -A "{build.path}/{build.project_name}.elf"
-recipe.size.regex.data=^(?:\.highcode|\.data|\.bss|\.stack)\S*\s+([0-9]+).*
+recipe.size.regex.data=^(?:\.data|\.bss|\.stack|\.highcode)\S*\s+([0-9]+).*
 recipe.size.regex=^(?:\.init|\.text|\.fini|\.preinit_array|\.init_array|\.fini_array|\.ctors|\.dtors|\.dlalign|\.data|\.highcode)\S*\s+([0-9]+).*
 
 ## Save hex

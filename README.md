@@ -1,4 +1,4 @@
-WCH CH582 Adruino Core with USB CDC
+WCH CH582 Arduino Core with USB CDC
 
 主要架構修改自 ElectronicCats/arduino-wch58x : https://github.com/ElectronicCats/arduino-wch58x#arduino-wch58x <br>
 
