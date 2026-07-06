@@ -25,7 +25,7 @@ typedef union I2C_CTRL1 {
 		uint16_t : 1;
 		uint16_t SWRST : 1;
 	};
-	uint8_t byte[2];
+	uint16_t raw;
 }I2C_CTRL1_t;
 //0x04
 typedef union I2C_CTRL2 {
@@ -38,7 +38,7 @@ typedef union I2C_CTRL2 {
 		uint16_t ITBUFEN : 1;
 		uint16_t : 5;
 	};
-	uint8_t byte[2];
+	uint16_t raw;
 }I2C_CTRL2_t;
 //0x08
 typedef union I2C_OADDR1 {
@@ -51,7 +51,12 @@ typedef union I2C_OADDR1 {
 		uint16_t MUST1 : 1;
 		uint16_t ADDMODE : 1;
 	};
-	uint8_t byte[2];
+	struct {
+		uint16_t ADD7_0 : 8;
+
+		uint16_t : 8;
+	};
+	uint16_t raw;
 }I2C_OADDR1_t;
 //0x0C
 typedef union I2C_OADDR2 {
@@ -61,16 +66,15 @@ typedef union I2C_OADDR2 {
 
 		uint16_t : 8;
 	};
-	uint8_t byte[2];
+	uint16_t raw;
 }I2C_OADDR2_t;
 //0x10
 typedef union I2C_DATAR {
 	struct {
 		uint16_t DATAR : 8;
-
 		uint16_t : 8;
 	};
-	uint8_t byte[2];
+	uint16_t raw;
 }I2C_DATAR_t;
 //0x14
 typedef union I2C_STAR1 {
@@ -93,7 +97,11 @@ typedef union I2C_STAR1 {
 		uint16_t TIMEOUT: 1;
 		uint16_t SMBALERT : 1;
 	};
-	uint8_t byte[2];
+	struct {
+		uint16_t EVENT : 8;
+		uint16_t ERROR : 8;
+	};
+	uint16_t raw;
 }I2C_STAR1_t;
 //0x18
 typedef union I2C_STAR2 {
@@ -109,7 +117,7 @@ typedef union I2C_STAR2 {
 
 		uint16_t : 8;
 	};
-	uint8_t byte[2];
+	uint16_t raw;
 }I2C_STAR2_t;
 //0x1C
 typedef union I2C_CKCFGR {
@@ -119,7 +127,7 @@ typedef union I2C_CKCFGR {
 		uint16_t DUTY : 1;
 		uint16_t F_S: 1;
 	};
-	uint8_t byte[2];
+	uint16_t raw;
 }I2C_CKCFGR_t;
 //0x20
 typedef union I2C_RTR {
@@ -127,7 +135,7 @@ typedef union I2C_RTR {
 		uint16_t TRISE : 6;
 		uint16_t : 10;
 	};
-	uint8_t byte[2];
+	uint16_t raw;
 }I2C_RTR_t;
 
 typedef union I2C_Module {
@@ -166,9 +174,9 @@ typedef union I2C_Module {
 /*-----0x4000480E-0F is RSVD-----*/
 #define x16_I2C_DATAR	(*(volatile I2C_DATAR_t*)		0x40004810)
 /*-----0x40004812-13 is RSVD-----*/
-#define x16_I2C_STAR1	(*(volatile I2C_CTRL1_t*)		0x40004814)
+#define x16_I2C_STAR1	(*(volatile I2C_STAR1_t*)		0x40004814)
 /*-----0x40004802-03 is RSVD-----*/
-#define x16_I2C_STAR2	(*(volatile I2C_CTRL2_t*)		0x40004818)
+#define x16_I2C_STAR2	(*(volatile I2C_STAR2_t*)		0x40004818)
 /*-----0x4000481A-1B is RSVD-----*/
 #define x16_I2C_CKCFGR	(*(volatile I2C_CKCFGR_t*)		0x4000481C)
 /*-----0x4000481E-1F is RSVD-----*/

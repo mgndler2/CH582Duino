@@ -76,3 +76,5 @@ void handler(void)
 #define __aligned_four__	__aligned(4)
 #endif // __aligned_four__
 #endif // _MSC_VER
+
+using Callback = void (*)(void*);

@@ -8,7 +8,7 @@ version=0.2.0
 
 # Build variables
 # ------------------------
-build.extra_flags=
+build.extra_flags={build.FREQ_flag} {build.DCDC_flag}
 build.extra_ldflags=
 
 compiler.wch.cflags=-ffunction-sections -fdata-sections -fno-builtin -g -msmall-data-limit=8 -mno-save-restore -Os -fmessage-length=0 -fsigned-char -Wunused -Wuninitialized

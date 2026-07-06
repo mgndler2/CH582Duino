@@ -30,6 +30,7 @@ void GPIOA_IRQHandler(void) {
 
 extern "C"
 __INTERRUPT
+//__attribute__((interrupt("WCH-Interrupt-fast")))
 void GPIOB_IRQHandler(void) {
 	uint32_t pending = (x32_INT_IF.Group & x32_INT_EN.Group) & 0xFFFF0000;
 
@@ -82,9 +83,11 @@ void attachInterrupt(uint8_t pin, void (*Func)(void), uint8_t Mode) {
 	
 	*pinINT_EN_map[Group].data_reg |= (1u << Bit);
 	if (pin < 16) {
+		PFIC_SetPriority(GPIO_A_IRQn, 0x80);
 		PFIC_EnableIRQ(GPIO_A_IRQn);
 	}
 	else {
+		PFIC_SetPriority(GPIO_B_IRQn, 0x80);
 		PFIC_EnableIRQ(GPIO_B_IRQn);
 	}
 	

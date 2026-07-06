@@ -21,18 +21,18 @@
 #define Arduino_h
 
 #include <stdlib.h>
+#include <stdint.h>
 #include <stdbool.h>
 #include <string.h>
 #include <math.h>
 
 #include <pins_arduino.h>
-#include "./SFR/CH583SFR.h"
-#include "./RVMSIS/core_riscv.h"
+#include "CH583SFR.h"
+#include "core_riscv.h"
 
 #ifndef _NOP
 #define _NOP() do { __asm__ volatile ("nop"); } while (0)
 #endif
-
 typedef uint8_t pin_size_t;
 
 typedef enum {
@@ -47,7 +47,6 @@ typedef enum {
 	OUTPUT = 0x1,
 	INPUT_PULLUP = 0x2,
 	INPUT_PULLDOWN = 0x3,
-	OUTPUT_OPENDRAIN = 0x4,
 } PinMode;
 
 typedef enum {
@@ -97,44 +96,46 @@ extern "C" {
 #define bitToggle(value, bit) ((value) ^= (1UL << (bit)))
 #define bitWrite(value, bit, bitvalue) ((bitvalue) ? bitSet(value, bit) : bitClear(value, bit))
 
-	 typedef unsigned int word;
+	typedef unsigned int word;
 
 #define bit(b) (1UL << (b))
 
-	 typedef bool boolean;
-	 typedef uint8_t byte;
-	 void init(void);
-	 void initVariant(void);
+	typedef bool boolean;
+	typedef uint8_t byte;
+	void init(void);
+	void initVariant(void);
 
-	 unsigned long millis(void);
-	 unsigned long micros(void);
-	 void delay(unsigned long ms);
-	 void delayMicroseconds(unsigned int us);
-	 unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long timeout);
-	 unsigned long pulseInLong(uint8_t pin, uint8_t state, unsigned long timeout);
+	unsigned long millis(void);
+	unsigned long micros(void);
+	void delay(unsigned long ms);
+	void delayMicroseconds(unsigned int us);
+	unsigned long pulseIn(uint8_t pin, uint8_t state, unsigned long timeout);
+	unsigned long pulseInLong(uint8_t pin, uint8_t state, unsigned long timeout);
 
-	 void shiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder, uint8_t val);
-	 uint8_t shiftIn(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder);
+	void shiftOut(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder, uint8_t val);
+	uint8_t shiftIn(uint8_t dataPin, uint8_t clockPin, uint8_t bitOrder);
 
-	 void attachInterrupt(uint8_t pin, void (*Func)(void), uint8_t Mode);
-	 void detachInterrupt(uint8_t interruptNum);
+	void attachInterrupt(uint8_t pin, void (*Func)(void), uint8_t Mode);
+	void detachInterrupt(uint8_t interruptNum);
 
-	 void setup(void);
-	 void loop(void);
+	void setup(void);
+	void loop(void);
+
+	// We provide analogReadResolution and analogWriteResolution APIs
+	void analogReadResolution(int bits);
+	void analogWriteResolution(int bits);
+
+	void pinMode(pin_size_t pin, PinMode mode, bool highPower = false);
+	void digitalWrite(pin_size_t pin, PinStatus val);
+	PinStatus digitalRead(pin_size_t pin);
+	int analogRead(pin_size_t pin, uint8_t gain = 0, uint8_t div = 2);
+	//void analogReference(uint8_t mode);
+	void analogWrite(pin_size_t pin, int val);
 #ifdef __cplusplus
 }
 #endif // __cplusplus
 
-// We provide analogReadResolution and analogWriteResolution APIs
-void analogReadResolution(int bits);
-void analogWriteResolution(int bits);
 
-void pinMode(pin_size_t pin, PinMode mode, bool highPower = false);
-void digitalWrite(pin_size_t pin, PinStatus val);
-PinStatus digitalRead(pin_size_t pin);
-int analogRead(pin_size_t pin, uint8_t gain = 0, uint8_t div = 2);
-//void analogReference(uint8_t mode);
-void analogWrite(pin_size_t pin, int val);
 
 #ifdef __cplusplus
 #include "WCharacter.h"

@@ -1,16 +1,23 @@
 ch582.name=CH582
 
 menu.Fsys=HCLK
-ch582.menu.Fsys.16MHz=16MHz(HSE)
-ch582.menu.Fsys.16MHz.build.extra_flags=-DFsys=16000000UL
-ch582.menu.Fsys.24MHz=24MHz(PLL)
-ch582.menu.Fsys.24MHz.build.extra_flags=-DFsys=24000000UL
-ch582.menu.Fsys.32MHz=32MHz(PLL)
-ch582.menu.Fsys.32MHz.build.extra_flags=-DFsys=32000000UL
-ch582.menu.Fsys.48MHz=48MHz(PLL)
-ch582.menu.Fsys.48MHz.build.extra_flags=-DFsys=48000000UL
 ch582.menu.Fsys.60MHz=60MHz(PLL)
-ch582.menu.Fsys.60MHz.build.extra_flags=-DFsys=60000000UL
+ch582.menu.Fsys.60MHz.build.FREQ_flag=-DF_CPU=60000000UL
+ch582.menu.Fsys.48MHz=48MHz(PLL)
+ch582.menu.Fsys.48MHz.build.FREQ_flag=-DF_CPU=48000000UL
+ch582.menu.Fsys.32MHz=32MHz(PLL)
+ch582.menu.Fsys.32MHz.build.FREQ_flag=-DF_CPU=32000000UL
+ch582.menu.Fsys.24MHz=24MHz(PLL)
+ch582.menu.Fsys.24MHz.build.FREQ_flag=-DF_CPU=24000000UL
+ch582.menu.Fsys.16MHz=16MHz(HSE)
+ch582.menu.Fsys.16MHz.build.FREQ_flag=-DF_CPU=16000000UL
+
+menu.DCDC=DC-DC
+ch582.menu.DCDC.Disable=Disable
+ch582.menu.DCDC.Disable.build.DCDC_flag=-DDCDC=0
+ch582.menu.DCDC.Enable=Enable
+ch582.menu.DCDC.Enable.build.DCDC_flag=-DDCDC=1
+
 
 ch582.build.core=CH58x
 ch582.build.variant=CH582

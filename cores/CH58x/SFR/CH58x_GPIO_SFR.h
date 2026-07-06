@@ -24,7 +24,7 @@ typedef union PIN_ALTERNATE {
 		  uint16_t PIN_U0_INV : 1;
 		  uint16_t PIN_RF_ANT_SW_EN : 1;
 	 };
-	 uint8_t byte[2];
+	 uint16_t raw;
 }PIN_ALTERNATE_t;
 //0x1A
 typedef union PIN_ANALOG_IE {
@@ -47,7 +47,7 @@ typedef union PIN_ANALOG_IE {
 		  uint16_t PIN_ADC2_3_IE : 1;
 		  uint16_t PIN_ADC4_5_IE : 1;
 	 };
-	 uint8_t byte[2];
+	 uint16_t raw;
 }PIN_ANALOG_IE_t;
 //0x90
 typedef union INT_EN {
@@ -228,13 +228,13 @@ typedef union PIN_B_GROUP {
 //
 // ALTERNATE
 //
-#define ALTERNATE		(*(volatile ALTERNATIVE_t*)	0x40001018)
+#define ALTERNATE		(*(volatile ALTERNATIVE_t*)		0x40001018)
 #define x16_PIN_ALTERNATE	(*(volatile PIN_ALTERNATE_t*)	0x40001018)
 #define x16_PIN_ANALOG_IE	(*(volatile PIN_ANALOG_IE_t*)	0x4000101A)
 //
 // PIN_INT
 //
-#define PIN_INT			(*(volatile PIN_INT_t*)		0x40001090)
+#define PIN_INT			(*(volatile PIN_INT_t*)			0x40001090)
 #define x32_INT_EN			(*(volatile INT_EN_t*)			0x40001090)
 #define x32_INT_MODE		(*(volatile INT_MODE_t*)		0x40001094)
 /*-----0x40001098-9B is RSVD-----*/
@@ -242,7 +242,7 @@ typedef union PIN_B_GROUP {
 //
 // PIN_A
 //
-#define PIN_A			(*(volatile PIN_A_GROUP_t*)	  0x400010A0)
+#define PIN_A			(*(volatile PIN_A_GROUP_t*)		0x400010A0)
 #define x32_PA_DIR			(*(volatile PA_DIR_t*)			0x400010A0)
 #define x32_PA_PIN			(*(volatile PA_PIN_t*)			0x400010A4)
 #define x32_PA_OUT			(*(volatile PA_OUT_t*)			0x400010A8)
@@ -252,7 +252,7 @@ typedef union PIN_B_GROUP {
 //
 // PIN_B
 //
-#define PIN_B			(*(volatile PIN_B_GROUP_t*)	  0x400010C0)
+#define PIN_B			(*(volatile PIN_B_GROUP_t*)		0x400010C0)
 #define x32_PB_DIR			(*(volatile PB_DIR_t*)			0x400010C0)
 #define x32_PB_PIN			(*(volatile PB_PIN_t*)			0x400010C4)
 #define x32_PB_OUT			(*(volatile PB_OUT_t*)			0x400010C8)

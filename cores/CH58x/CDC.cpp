@@ -50,7 +50,7 @@ int CDC_::getInterface(uint8_t* interfaceCount, int offset) {
 
 	D_INTERFACE(*interfaceCount, 1, 0x02, 0x02, 0x00),	//face 0, 1 EP, CDC COMM, ACM, AT
 	D_CDCCS(CDC_HEADER, 0x10, 0x01),	//header, v1.10
-	D_CDCCS(CDC_CALL_MANAGEMENT, 0x01, (*interfaceCount + 1)),	//Call Management, No data IF inside, Data InterFace
+	D_CDCCS(CDC_CALL_MANAGEMENT, 0x01, (uint8_t)(*interfaceCount + 1)),	//Call Management, No data IF inside, Data InterFace
 	D_CDCCS4(CDC_ABSTRACT_CONTROL_MANAGEMENT, 0x06),	//ACM, linecoding linestate
 	D_CDCCS(CDC_UNION, *interfaceCount, (uint8_t)(*interfaceCount + 1)),	//CDC_UNION, COMM interface, DATA interface
 	D_ENDPOINT(0x81, 0x03, 0x08, 0x10), //EP1 IN, INT, 8 bytes, interval 16ms

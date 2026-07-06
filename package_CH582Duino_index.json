@@ -78,7 +78,43 @@
                     "help": {
                         "online": ""
                     }
+                },
+                {
+                    "name": "CH582",
+                    "architecture": "wch",
+                    "version": "0.1.4",
+                    "category": "Contributed",
+                    "url": "https://github.com/mgndler2/CH582Duino/releases/download/0.1.4/platform.tar.gz",
+                    "archiveFileName": "platform.tar.gz",
+                    "checksum": "SHA-256:ed1b5fa18c21957266619e9958d90efa0f8b29cecbfd3f64b83f586884d23085",
+                    "size": "987000",
+                    "boards": [
+                        {
+                            "name": "CH582"
+                        }
+                    ],
+                    "toolsDependencies": [
+                        {
+                            "packager": "CH582Duino",
+                            "name": "riscv-none-elf-gcc",
+                            "version": "14.3.0-1-xPack"
+                        },
+                        {
+                            "packager": "CH582Duino",
+                            "name": "WCHISP",
+                            "version": "0.3.0"
+                        },
+                        {
+                            "packager": "CH582Duino",
+                            "name": "IAPTool",
+                            "version": "1.0.1"
+                        }
+                    ],
+                    "help": {
+                        "online": ""
+                    }
                 }
+
             ],
             "tools": [
                 {

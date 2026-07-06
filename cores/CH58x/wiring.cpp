@@ -18,10 +18,13 @@
 
 #include "Arduino.h"
 #include "./SFR/CH58x_SYSTICK_SFR.h"
+#include "./SFR/CH58x_PMU_SFR.h"
 #include "./HAL/CH58x_SYS.h"
 #include "./HAL/HAL.h"
 //#include "./PERIPH/CH58x_sui.h"
 #include "CDC.h"
+
+uint32_t Ftt = 0;
 
 #ifdef __cplusplus
 extern "C" {
@@ -64,34 +67,49 @@ extern "C" {
 		while ((micros() - inTime) < us);
 	}
 
-#if(Fsys == 60000000UL)
+#if(F_CPU == 60000000UL)
 	ns_SYS::HCLK_CLKSOURCE HCLK = ns_SYS::CLK_SOURCE_PLL_60MHz;
-#elif(Fsys == 48000000UL)
+#elif(F_CPU == 48000000UL)
 	ns_SYS::HCLK_CLKSOURCE HCLK = ns_SYS::CLK_SOURCE_PLL_48MHz;
-#elif(Fsys == 32000000UL)
+#elif(F_CPU == 32000000UL)
 	ns_SYS::HCLK_CLKSOURCE HCLK = ns_SYS::CLK_SOURCE_PLL_32MHz;
-#elif(Fsys == 24000000UL)
+#elif(F_CPU == 24000000UL)
 	ns_SYS::HCLK_CLKSOURCE HCLK = ns_SYS::CLK_SOURCE_PLL_24MHz;
-#elif(Fsys == 16000000UL)
+#elif(F_CPU == 16000000UL)
 	ns_SYS::HCLK_CLKSOURCE HCLK = ns_SYS::CLK_SOURCE_HSE_16MHz;
+#else
+	ns_SYS::HCLK_CLKSOURCE HCLK = ns_SYS::CLK_SOURCE_PLL_48MHz;
 #endif
+
+
 	void init(void)
 	{
-		Serial1.println(TUNE32K.CK32K_CONFIG.byte);
 		CPU_CLK.SetSysClock(HCLK);
 		SySTick.STK_CMPLR.pad = CPU_CLK.GetSysClock() / 8000;  //F_cpu / 8 / 1kHz = 6000;
 		SySTick.STK_CMPHR.pad = 0x00000000;
+		
+#if(DCDC == 1)
+		sys_safe_access_enable();
+		x16_POWER_PLAN.DCDC_PRE = 1;
+		x16_POWER_PLAN.DCDC_EN = 1;
+		sys_safe_access_disable();
+#elif(DCDC == 0)
+		sys_safe_access_enable();
+		x16_POWER_PLAN.DCDC_PRE = 0;
+		x16_POWER_PLAN.DCDC_EN = 0;
+		sys_safe_access_disable();
+#endif
 
 		for (int i = 0; i < 1200; i++)
 		{
 			_nop();_nop();
 		}
-		PFIC_SetPriority(SysTick_IRQn, 10);
+		//PFIC_SetPriority(SysTick_IRQn, 10);
 		PFIC_EnableIRQ(SysTick_IRQn);
 		SySTick.STK_CTRL.pad = 0x002B;
 	}
 
-	__attribute__((interrupt))
+	__INTERRUPT
 		void SysTick_Handler(void) {
 		t_millis++;
 		SysTick->SR = 0;
